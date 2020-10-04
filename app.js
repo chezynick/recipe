@@ -168,10 +168,11 @@ function details(a){
 //delete button function      
       deleteButton[i].addEventListener('click', delwhich)
 function delwhich(){
-if(a.length === myLibrary.length){
+
     delete myLibrary[i];
-}
-addbook(myLibrary);
+    addbook(myLibrary);
+
+
 
 };
 };   
@@ -200,6 +201,7 @@ addbook(myLibrary);
         let returnAll = document.getElementById('all');
         returnAll.addEventListener('click', backToAll);
         function backToAll(){
+            
             addbook(myLibrary);
             details(myLibrary);
         }
@@ -208,9 +210,9 @@ addbook(myLibrary);
         let alpha = document.getElementById('Alphabet');
             alpha.addEventListener('click', alphaSort)
             function alphaSort(){
-            myLibrary.sort((a,b) => a.title > b.title? 1 :-1)
-            addbook(myLibrary)
-            details(myLibrary);
+            const result = myLibrary.sort((a,b) => a.title > b.title? 1 :-1)
+            addbook(result)
+            details(result);
         };
   
 
