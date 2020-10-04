@@ -21,6 +21,7 @@ function book (title, author,course, link, page){
         let delButton = document.createElement('img');
         let title = document.createElement('h4');
         let description = document.createElement('h5');
+        let linkButton = document.createElement('img');
         
         
         //add class to box and button
@@ -28,6 +29,7 @@ function book (title, author,course, link, page){
         delButton.classList.add('delButton');
         innerbox.classList.add('book');
         box.classList.add('recipeHolder')
+        linkButton.classList.add('linkButton');
         
         //add inner text
        
@@ -37,6 +39,7 @@ function book (title, author,course, link, page){
         delButton.value = arr[i].title;
         delButton.src = 'bin.png'
         image.src = arr[i].link;
+        linkButton.src = 'link.png'
         //attach header and description to innerbox
         innerbox.appendChild(title);
         innerbox.appendChild(description);
@@ -45,10 +48,11 @@ function book (title, author,course, link, page){
         box.appendChild(image);
         box.appendChild(innerbox);
         box.appendChild(delButton);
+        box.appendChild(linkButton);
         
         //attach box to shelf
         shelf.appendChild(box); 
-
+        
 };
 };
 
@@ -140,42 +144,40 @@ function details(a){
 //change display on book info and trash button          
     let trash = document.querySelectorAll('.delButton');
     let info = document.querySelectorAll('.book');
+    let link = document.querySelectorAll('.linkButton');
+    let deleteButton = document.querySelectorAll('.delButton');
         trash[i].style.display = 'block';
         info[i].style.display = 'flex';
+        link[i].style.display = 'block';
      
     
 //remove resultBox from page and restart details function    
       bookSelect[i].addEventListener('mouseout', closebox);
       function closebox(){
         trash[i].style.display = 'none';
-        info[i].style.display = 'none';        
+        info[i].style.display = 'none';   
+        link[i].style.display = 'none';     
       };
 
 //jump to recipe in new window
-        bookSelect[i].addEventListener('click', newLink)
+      
+        link[i].addEventListener('click', newLink)
         function newLink(){
             window.open(a[i].page, '_blank');
       }
+//delete button function      
+      deleteButton[i].addEventListener('click', delwhich)
+function delwhich(){
+if(a.length === myLibrary.length){
+    delete myLibrary[i];
+}
+addbook(myLibrary);
 
 };
 };   
 };
+};
 
-//delete button function
-      
-
-    let deleteButton = document.querySelectorAll('.delButton');
-//loop through delete buttons to find one that matches 
-    for(let i=0;i < deleteButton.length;i++){
-        deleteButton[i].addEventListener('click', delwhich)
-function delwhich(){
-  
-   myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
-addbook(myLibrary);
-details(myLibrary);
-
-      };
-    };
 
 
 // add sort by mains
