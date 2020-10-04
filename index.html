@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset='utf-8'/>
+<header>
+    <title>Library</title>
+    <link rel = "stylesheet"
+    type ="text/css"
+    href = "style.css" />
+    
+</header>
+<body>
+    <h3>Recipe Library</h3>
+    <p class='instructions'>Hover over each photo for further details or click to Jump.</p>
+<div id = 'shelf'></div>
+
+<div id = 'buttonBar'>
+<input type='button' value='+ Add Book' id='newBookButton'/>
+<input class='sortButtons' type='button' value='Mains' id='mains'/>
+<input class='sortButtons' type='button' value='Desserts' id='desserts'/>
+<input class='sortButtons' type='button' value='All' id='all'/>
+<input class='sortButtons' type='button' value='A-Z' id='Alphabet'/>
+</div>
+<form id = 'newForm'>   
+<label>Whats your recipe called?</label>
+<input class ='textboxes' type='textarea' name='title' id='textTitle'/>
+<label>Describe the dish</label>
+<input class ='textboxes' type='textarea' id='textAuthor'/>
+<label>which course? main or Dessert?</label>
+<input class ='textboxes' type='textarea'  id='textCourse'/>
+<label>Add a link to a picture of your recipe</label>
+<input class ='textboxes' type='textarea'  id='textPicLInk'/>
+<label>Finally add a URL</label>
+<input class ='textboxes' type='textarea'  id='textLink'/>
+<div class = 'buttonHolder'>
+<input class = 'formButton' type='button' id='cancel' value='Cancel'/>
+<input class = 'formButton'  type='button' id='reset' value='reset'/>
+<input class = 'formButton'  type='button' id='submit' value='add'/>
+</div>
+</form>
+
+
+
+
+</body>
+<script src = 'app.js'>
+
+</script>        
+</html>
