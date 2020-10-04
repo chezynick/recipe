@@ -169,7 +169,8 @@ function details(a){
       deleteButton[i].addEventListener('click', delwhich)
 function delwhich(){
 
-    delete myLibrary[i];
+    myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
+
     addbook(myLibrary);
 
 
