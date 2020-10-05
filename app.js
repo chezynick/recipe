@@ -1,5 +1,16 @@
 //create myLibrary array
-         myLibrary = [];
+/* ===== Library Array and saving to Local Storage===== */
+let myLibrary = localStorage.getItem('items')
+? JSON.parse(localStorage.getItem('items'))
+: []
+
+localStorage.setItem('items', JSON.stringify(myLibrary));
+
+/* ===== Getting data from Local Storage  ===== */
+const data = JSON.parse(localStorage.getItem('items'))
+
+        //  myLibrary = [];
+
  let shelf = document.getElementById('shelf');
  //function for creating book- constructor
 function book (title, author,course, link, page){
@@ -125,7 +136,8 @@ function book (title, author,course, link, page){
        author.value = '';
        course.value = ''; 
        picLink.value = '';
-       link.value = '';  
+       link.value = ''; 
+       localStorage.setItem('items', JSON.stringify(myLibrary)); 
        cancelBook();          
        addbook(myLibrary);
        details(myLibrary);
@@ -172,6 +184,7 @@ function delwhich(){
     myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
 
     addbook(myLibrary);
+    
 
 
 
