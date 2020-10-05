@@ -182,7 +182,7 @@ function details(a){
 function delwhich(){
 
     myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
-
+    localStorage.setItem('items', JSON.stringify(myLibrary));
     addbook(myLibrary);
     
 
