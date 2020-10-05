@@ -180,7 +180,7 @@ function details(a){
             window.open(a[i].page, '_blank');
       }
 //delete button function      
-      deleteButton[i].addEventListener('click', delwhich)
+      deleteButton[i].addEventListener('click', delwhich);
 function delwhich(){
 
     myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
