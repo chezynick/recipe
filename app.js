@@ -65,7 +65,7 @@ function book (title, author,course, link, page){
 
 
 //create a few books
-if (myLibrary.length === 0){
+if (myLibrary = []){
     const book1 =  new book('Chocolate Fondant', 'A gooey prepare-ahead dessert thats perfect for entertaining','Dessert', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-22625_11-1e84fa2.jpg?quality=90&webp=true&resize=300,272','https://www.bbcgoodfood.com/recipes/chocolate-fondant');
     myLibrary.push(book1);
     const book2 = new book('Red Lentil Fritters', 'Oven Bake to make them healthier, great in wraps or naans.','main',  'https://data.thefeedfeed.com/recommended/post_677507.jpeg','https://www.youtube.com/watch?v=94VdtP5OlZI&t=271s');
@@ -178,21 +178,22 @@ function details(a){
         function newLink(){
             window.open(a[i].page, '_blank');
       }
-//delete button function      
+//delete button function    
+
       deleteButton[i].addEventListener('click', delwhich);
 function delwhich(){
 
     myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
     localStorage.setItem('items', JSON.stringify(myLibrary));
     addbook(myLibrary);
-    
+}   
 
 
 
 };
 };   
 };
-};
+
 
 
 
