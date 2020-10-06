@@ -17,6 +17,7 @@ function book (title, author,course, link, page){
     this.page = page;
     
 };
+addbook(myLibrary);
     function addbook(arr){
          shelf.innerHTML = '';
          //for each array create a box and display array title
@@ -82,6 +83,7 @@ if (myLibrary = []){
     addbook(myLibrary);
 
     };
+    addbook(myLibrary);
     //new book button 
     let add = document.getElementById('newBookButton');
     let title = document.getElementById('textTitle');
