@@ -4,10 +4,6 @@ let myLibrary = localStorage.getItem('items')
 ? JSON.parse(localStorage.getItem('items'))
 : []
 
-localStorage.setItem('items', JSON.stringify(myLibrary));
-
-/* ===== Getting data from Local Storage  ===== */
-const data = JSON.parse(localStorage.getItem('items'))
 
         //  myLibrary = [];
 
@@ -69,7 +65,7 @@ function book (title, author,course, link, page){
 
 
 //create a few books
-if (myLibrary = []){
+if (myLibrary.length === 0){
     const book1 =  new book('Chocolate Fondant', 'A gooey prepare-ahead dessert thats perfect for entertaining','Dessert', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-22625_11-1e84fa2.jpg?quality=90&webp=true&resize=300,272','https://www.bbcgoodfood.com/recipes/chocolate-fondant');
     myLibrary.push(book1);
     const book2 = new book('Red Lentil Fritters', 'Oven Bake to make them healthier, great in wraps or naans.','main',  'https://data.thefeedfeed.com/recommended/post_677507.jpeg','https://www.youtube.com/watch?v=94VdtP5OlZI&t=271s');
@@ -82,7 +78,9 @@ if (myLibrary = []){
     myLibrary.push(book5);
     const book6 = new book('Rhubarb Crumble','perfect Rhubarb recipe,just make sure to freeze crumble mix first','dessert','https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-219487_11-9c9ae75.jpg?quality=90&resize=440,400','https://www.bbcgoodfood.com/recipes/rhubarb-crumble')
     myLibrary.push(book6);
+    
     addbook(myLibrary);
+
     };
     //new book button 
     let add = document.getElementById('newBookButton');
@@ -134,12 +132,13 @@ if (myLibrary = []){
             }else{
             let createdBook =  new book(a, b, c, d, e);
        myLibrary.push(createdBook);
+              localStorage.setItem('items', JSON.stringify(myLibrary)); 
        title.value = '';
        author.value = '';
        course.value = ''; 
        picLink.value = '';
        link.value = ''; 
-       localStorage.setItem('items', JSON.stringify(myLibrary)); 
+
        cancelBook();          
        addbook(myLibrary);
        details(myLibrary);
