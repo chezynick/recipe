@@ -1,12 +1,5 @@
 //create myLibrary array
 /* ===== Library Array and saving to Local Storage===== */
-let myLibrary = localStorage.getItem('items')
-? JSON.parse(localStorage.getItem('items'))
-: []
-
-
-        //  myLibrary = [];
-
  let shelf = document.getElementById('shelf');
  //function for creating book- constructor
 function book (title, author,course, link, page){
@@ -17,6 +10,34 @@ function book (title, author,course, link, page){
     this.page = page;
     
 };
+
+let myLibrary = localStorage.getItem('items')
+? JSON.parse(localStorage.getItem('items'))
+: [] ;
+if (myLibrary = []){
+    const book1 =  new book('Chocolate Fondant', 'A gooey prepare-ahead dessert thats perfect for entertaining','Dessert', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-22625_11-1e84fa2.jpg?quality=90&webp=true&resize=300,272','https://www.bbcgoodfood.com/recipes/chocolate-fondant');
+    myLibrary.push(book1);
+    const book2 = new book('Red Lentil Fritters', 'Oven Bake to make them healthier, great in wraps or naans.','main',  'https://data.thefeedfeed.com/recommended/post_677507.jpeg','https://www.youtube.com/watch?v=94VdtP5OlZI&t=271s');
+    myLibrary.push(book2);
+    const book3 = new book('Banoffe Pie Overnight Oats', 'great for pre cycle,loads of energy', 'Dessert', 'https://www.thegardengrazer.com/wp-content/uploads/2018/01/vanilla-overnight-oats-square-650.jpg','https://www.youtube.com/watch?v=5nWsV0Be-vI')
+    myLibrary.push(book3);
+    const book4 = new book('Sri Lankan Brindal Bhaji', 'Aubergine curry, sweet, tangy and Delicious','main','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSWSVao6BYXCKLbbbXvI-Lbr3LT0jT37vZu9Q&usqp=CAU','https://www.youtube.com/watch?v=4jYvHNMmeJM')
+    myLibrary.push(book4);
+    const book5 = new book('Lemon self saucing Pudding','Light, fluffy and sweet','dessert','https://bakeplaysmile.com/wp-content/uploads/2019/07/Lemon-Delicious-Pudding-Portrait-3-1.jpg','https://www.olivemagazine.com/recipes/baking-and-desserts/lemon-self-saucing-pudding-lemon-surprise-pudding/')
+    myLibrary.push(book5);
+    const book6 = new book('Rhubarb Crumble','perfect Rhubarb recipe,just make sure to freeze crumble mix first','dessert','https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-219487_11-9c9ae75.jpg?quality=90&resize=440,400','https://www.bbcgoodfood.com/recipes/rhubarb-crumble')
+    myLibrary.push(book6);
+    
+    addbook(myLibrary);
+
+} else {
+    addbook(myLibrary);
+}
+
+
+        //  myLibrary = [];
+
+
 addbook(myLibrary);
     function addbook(arr){
          shelf.innerHTML = '';
@@ -60,29 +81,13 @@ addbook(myLibrary);
         
         //attach box to shelf
         shelf.appendChild(box); 
-        
+        details();
 };
 };
 
 
 //create a few books
-if (myLibrary = []){
-    const book1 =  new book('Chocolate Fondant', 'A gooey prepare-ahead dessert thats perfect for entertaining','Dessert', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-22625_11-1e84fa2.jpg?quality=90&webp=true&resize=300,272','https://www.bbcgoodfood.com/recipes/chocolate-fondant');
-    myLibrary.push(book1);
-    const book2 = new book('Red Lentil Fritters', 'Oven Bake to make them healthier, great in wraps or naans.','main',  'https://data.thefeedfeed.com/recommended/post_677507.jpeg','https://www.youtube.com/watch?v=94VdtP5OlZI&t=271s');
-    myLibrary.push(book2);
-    const book3 = new book('Banoffe Pie Overnight Oats', 'great for pre cycle,loads of energy', 'Dessert', 'https://www.thegardengrazer.com/wp-content/uploads/2018/01/vanilla-overnight-oats-square-650.jpg','https://www.youtube.com/watch?v=5nWsV0Be-vI')
-    myLibrary.push(book3);
-    const book4 = new book('Sri Lankan Brindal Bhaji', 'Aubergine curry, sweet, tangy and Delicious','main','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSWSVao6BYXCKLbbbXvI-Lbr3LT0jT37vZu9Q&usqp=CAU','https://www.youtube.com/watch?v=4jYvHNMmeJM')
-    myLibrary.push(book4);
-    const book5 = new book('Lemon self saucing Pudding','Light, fluffy and sweet','dessert','https://bakeplaysmile.com/wp-content/uploads/2019/07/Lemon-Delicious-Pudding-Portrait-3-1.jpg','https://www.olivemagazine.com/recipes/baking-and-desserts/lemon-self-saucing-pudding-lemon-surprise-pudding/')
-    myLibrary.push(book5);
-    const book6 = new book('Rhubarb Crumble','perfect Rhubarb recipe,just make sure to freeze crumble mix first','dessert','https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-219487_11-9c9ae75.jpg?quality=90&resize=440,400','https://www.bbcgoodfood.com/recipes/rhubarb-crumble')
-    myLibrary.push(book6);
-    
-    addbook(myLibrary);
 
-    };
     addbook(myLibrary);
     //new book button 
     let add = document.getElementById('newBookButton');
@@ -188,6 +193,7 @@ function delwhich(){
     myLibrary = myLibrary.filter(name => name.title !== deleteButton[i].value);
     localStorage.setItem('items', JSON.stringify(myLibrary));
     addbook(myLibrary);
+    
 }   
 
 
