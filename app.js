@@ -27,7 +27,7 @@ if (myLibrary.length  === 0){
     myLibrary.push(book5);
     const book6 = new book('Rhubarb Crumble','perfect Rhubarb recipe,just make sure to freeze crumble mix first','dessert','https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-219487_11-9c9ae75.jpg?quality=90&resize=440,400','https://www.bbcgoodfood.com/recipes/rhubarb-crumble')
     myLibrary.push(book6);
-    
+    localStorage.setItem('items', JSON.stringify(myLibrary)); 
     addbook(myLibrary);
 
 } else {
