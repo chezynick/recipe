@@ -29,7 +29,8 @@ h3 {font-size: 50px;text-align: center; }
 img {width: 280px; height:280px;z-index: -1;}
 .book {width:50%; height:100%; background-color: rgb(44, 44, 44, 0.75); color:rgb(216, 243, 220); top:0;
 	z-index:1; margin: 0;left:0; position: absolute; display:none; flex-direction: column; text-align: center;justify-content: space-around; padding-left: 10px; padding-right:10px}
-
+input:invalid {border: red solid 1px;}
+input:valid {border: green solid 1px;}
 .delButton {width:40px; height:40px;background-color:rgb(44, 44, 44);display:none;border:none; z-index:999;position: absolute; bottom:0; right:0px }
 .linkButton {width:40px; height:35px;background-color:rgb(44, 44, 44);display:none;border:none; z-index:999;position: absolute; top:0; right:0px }
 p {padding-top:10px; margin-bottom: 20px;}

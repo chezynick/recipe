@@ -22,9 +22,9 @@
 </div>
 <form id = 'newForm'>   
 <label>Whats your recipe called?</label>
-<input class ='textboxes' type='textarea' name='title' id='textTitle' required minlength="5"/>
+<input class ='textboxes' type='textarea' name='title' id='textTitle' placeholder = 'min 5 characters' required minlength="5"/>
 <label>Describe the dish</label>
-<input class ='textboxes' type='textarea' id='textAuthor' required/>
+<input class ='textboxes' type='textarea' id='textAuthor' required minlength="10" placeholder="min lengh 10 characters" />
 <label>which course? main or Dessert?</label>
 <input class ='textboxes' type='textarea'  id='textCourse' list='l1' required/>
 <datalist id='l1'>
@@ -32,9 +32,9 @@
     <option>Dessert</option>
 </datalist>
 <label>Add a link to a picture of your recipe</label>
-<input class ='textboxes' type='textarea'  id='textPicLInk' required minlength="10"/>
+<input class ='textboxes' type='textarea'  id='textPicLInk' placeholder= 'Try to select a square photo' required minlength="10"/>
 <label>Finally add a URL</label>
-<input class ='textboxes' type='textarea'  id='textLink' required minlength="10"/>
+<input class ='textboxes' type='url'  id='textLink' required minlength="10"/>
 <div class = 'buttonHolder'>
 <input class = 'formButton' type='button' id='cancel' value='Cancel'/>
 <input class = 'formButton'  type='button' id='reset' value='reset'/>
