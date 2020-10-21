@@ -135,7 +135,7 @@ addbook(myLibrary);
             let d = picLink.value;
             let e = link.value;
             if(a===''||b===''||c===''||d===''||e===''){
-                cancelBook();
+                alert('Please complete all fields');
             }else{
             let createdBook =  new book(a, b, c, d, e);
        myLibrary.push(createdBook);
