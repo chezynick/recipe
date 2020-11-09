@@ -134,7 +134,7 @@ addbook(myLibrary);
             let c = course.value;
             let d = picLink.value;
             let e = link.value;
-            if(a===''||b===''||c===''||d===''||e===''){
+            if(a===''||c===''||d===''||e===''){
                 alert('Please complete all fields');
             }else{
             let createdBook =  new book(a, b, c, d, e);
