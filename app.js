@@ -231,6 +231,7 @@ function details(a) {
 let sortTitle = document.getElementById("mains");
 sortTitle.addEventListener("click", main);
 function main() {
+  console.log('called for mains');
   sorted = myLibrary
     .filter((a) => a.course === "mains" || a.course === "Mains")
     .sort((a, b) => (a.title > b.title ? 1 : -1));
