@@ -45,13 +45,25 @@
 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBGukwnEwLDxjD6IA3kfVWrN4ZGaAENTls",
+    authDomain: "recipe-ad1da.firebaseapp.com",
+    databaseURL: "https://recipe-ad1da.firebaseio.com",
+    projectId: "recipe-ad1da",
+    storageBucket: "recipe-ad1da.appspot.com",
+    messagingSenderId: "649560567611",
+    appId: "1:649560567611:web:f279d97d4f2930b4fa511e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 <script src = 'app.js'>
 
